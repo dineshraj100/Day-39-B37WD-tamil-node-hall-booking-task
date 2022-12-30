@@ -8,6 +8,11 @@ const URL =process.env.DB;
 
 app.use(express.json());
 
+app.get('/', async function (req, res) {
+  res.json(
+    'Server is running successfully!!! hit appropriate calls to get the response'
+  )
+})
 
 app.post("/hall",async function(req,res){  //add a new hall in database
     try{
@@ -219,4 +224,4 @@ await connection.close();
         })
 
     
-app.listen(process.env.PORT ||3000 );
+app.listen(process.env.PORT ||3000, console.log('server running !!!') );
